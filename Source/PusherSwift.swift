@@ -18,8 +18,6 @@ public class Pusher {
     public let connection: PusherConnection
     private let key: String
     
-    private class var sharedNativePusher : NativePusher?
-    
     /**
         Initializes the Pusher client with an app key and any appropriate options.
 
@@ -36,7 +34,7 @@ public class Pusher {
         connection = PusherConnection(key: key, socket: ws, url: urlString, options: pusherClientOptions)
         connection.createGlobalChannel()
         
-        sharedNativePusher = NativePusher(key)
+        NativePusher.sharedInstance.setPusherAppKey(key)
     }
 
     /**
@@ -104,8 +102,8 @@ public class Pusher {
         self.connection.connect()
     }
 
-    public func nativePusher() {
-        return sharedNativePusher
+    public func nativePusher() -> NativePusher {
+        return NativePusher.sharedInstance
     }
 }
 
