@@ -13,7 +13,7 @@ public class NativePusher {
     static let sharedInstance = NativePusher()
     
     private static let PLATFORM_TYPE = "apns"
-    private let CLIENT_API_V1_ENDPOINT = "https://nativepushclient-cluster1.pusher.com/client_api/v1"
+    private let CLIENT_API_V1_ENDPOINT = "https://hedwig-staging.herokuapp.com/client_api/v1"
     
     private let URLSession = NSURLSession.sharedSession()
     

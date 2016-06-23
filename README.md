@@ -359,7 +359,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let pusher = Pusher(key: "YOUR_APP_KEY")
 ```
 
-For your Swift app to receive push notifications, it must first register with APNs. You should do this when the application finishes launching. Your app should register for all types of notification, like so:
+For your Swift app to receive push notifications, it must first register with APNs. You should do this when the application finishes launching, by calling `UIApplication.registerForRemoteNotifications`. Your app should register for all types of notification, like so:
 
 ```swift
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -378,8 +378,8 @@ Your app can now subscribe to interests. The following registers and subscribes 
 
 ```swift
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : NSData) {
-        pusher.nativePush().register(deviceToken)
-        pusher.nativePush().subscribe("donuts")
+        pusher.nativePusher().register(deviceToken)
+        pusher.nativePusher().subscribe("donuts")
     }
 ```
 
@@ -395,7 +395,7 @@ When your server publishes a notification to the interest "donuts", it will get 
 If at a later point you wish to unsubscribe from an interest, this works in the same way:
 
 ```swift
-        pusher.nativePush().unsubscribe("donuts")
+        pusher.nativePusher().unsubscribe("donuts")
 ```
 
 For a complete example of a working app, see the `Example/` directory in this repository.

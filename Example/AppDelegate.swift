@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         // Override point for customization after application launch.
+        print("Registering with APNs for remote notifications")
         let notificationTypes : UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
         let pushNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
         application.registerUserNotificationSettings(pushNotificationSettings)
@@ -36,12 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : NSData) {
+        print("Received device token from APNs: " + deviceToken.toHexString())
         pusher.nativePusher().register(deviceToken)
         pusher.nativePusher().subscribe("donuts")
     }
 
     func application(application : UIApplication, didFailToRegisterForRemoteNotificationsWithError error : NSError) {
-        print(error)
+        print("Failed to register for remote notifications: " + error.)
     }
 
     func application(application : UIApplication, didReceiveRemoteNotification userInfo : [NSObject : AnyObject]) {
