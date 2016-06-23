@@ -13,7 +13,7 @@ import PusherSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let pusher = Pusher(key: "YOUR_PUSHER_APP_KEY")
+    let pusher = Pusher(key: "2267bb72da79015af618")
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application : UIApplication, didFailToRegisterForRemoteNotificationsWithError error : NSError) {
-        print("Failed to register for remote notifications: " + error.)
+        print("Failed to register for remote notifications: " + error.localizedDescription)
     }
 
     func application(application : UIApplication, didReceiveRemoteNotification userInfo : [NSObject : AnyObject]) {

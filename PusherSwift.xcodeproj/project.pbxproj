@@ -76,6 +76,8 @@
 		9AF0AE2899725CA479C40F3C /* Pods_PusherSwiftTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9187A66014F4DC5126D41AF6 /* Pods_PusherSwiftTests_OSX.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		9CE54E77A997EE52C43A1B7C /* Pods_PusherSwiftTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2A475E76EC1FC9DB5346A5 /* Pods_PusherSwiftTests_iOS.framework */; };
 		BA99BA04D960338935F74F1F /* Pods_PusherSwiftTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3270921573904AE304CEF671 /* Pods_PusherSwiftTests_tvOS.framework */; };
+		FD5E5F3F1D1BE150000BE42D /* NativePusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7424A81D1459B700CED79C /* NativePusher.swift */; };
+		FD5E5F401D1BE152000BE42D /* NativePusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7424A81D1459B700CED79C /* NativePusher.swift */; };
 		FD7424A91D1459B700CED79C /* NativePusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7424A81D1459B700CED79C /* NativePusher.swift */; };
 /* End PBXBuildFile section */
 
@@ -170,7 +172,7 @@
 		CD14AEB3AB7E98B3386CFF06 /* Pods_Tests_PusherSwiftTests_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests_PusherSwiftTests_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3ADB71F4691FE076D2FCF60 /* Pods-Builds-PusherSwift-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builds-PusherSwift-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Builds-PusherSwift-iOS/Pods-Builds-PusherSwift-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DA9BA263FA4AB6FF157F8326 /* Pods-PusherSwiftTests-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PusherSwiftTests-OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-PusherSwiftTests-OSX/Pods-PusherSwiftTests-OSX.release.xcconfig"; sourceTree = "<group>"; };
-		FD7424A81D1459B700CED79C /* NativePusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativePusher.swift; sourceTree = "<group>"; };
+		FD7424A81D1459B700CED79C /* NativePusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NativePusher.swift; path = Source/NativePusher.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,7 +461,7 @@
 				33831C841A9CF61600B124F1 /* Sources */,
 				33831C861A9CF61600B124F1 /* Headers */,
 				33831C871A9CF61600B124F1 /* Resources */,
-				3358FA6E1B4FD8C000AB0670 /* ShellScript */,
+				3358FA6E1B4FD8C000AB0670 /* Run Script */,
 				50355EA8A07B4B8038A4DDF1 /* Frameworks */,
 			);
 			buildRules = (
@@ -548,6 +550,7 @@
 				TargetAttributes = {
 					33831C881A9CF61600B124F1 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = H7FL434D9W;
 					};
 					33831C931A9CF61600B124F1 = {
 						CreatedOnToolsVersion = 6.3;
@@ -655,13 +658,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PusherSwiftTests-iOS/Pods-PusherSwiftTests-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3358FA6E1B4FD8C000AB0670 /* ShellScript */ = {
+		3358FA6E1B4FD8C000AB0670 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -814,6 +818,7 @@
 				3389F5771CAEDE2800563F49 /* PusherGlobalChannel.swift in Sources */,
 				3389F57B1CAEDEC800563F49 /* PusherClientOptions.swift in Sources */,
 				3389F56F1CAEDDD800563F49 /* PusherPresenceChannel.swift in Sources */,
+				FD5E5F3F1D1BE150000BE42D /* NativePusher.swift in Sources */,
 				33C0D2E51CB5C539003FE13E /* Reachability.swift in Sources */,
 				33C0D2D61CB5C1F2003FE13E /* CryptoSwiftHMACModule.swift in Sources */,
 				33C0D2DC1CB5C364003FE13E /* Starscream.swift in Sources */,
@@ -832,6 +837,7 @@
 				3389F5781CAEDE2800563F49 /* PusherGlobalChannel.swift in Sources */,
 				3389F57C1CAEDEC800563F49 /* PusherClientOptions.swift in Sources */,
 				3389F5701CAEDDD800563F49 /* PusherPresenceChannel.swift in Sources */,
+				FD5E5F401D1BE152000BE42D /* NativePusher.swift in Sources */,
 				33C0D2E61CB5C539003FE13E /* Reachability.swift in Sources */,
 				33C0D2D71CB5C1F2003FE13E /* CryptoSwiftHMACModule.swift in Sources */,
 				33C0D2DD1CB5C364003FE13E /* Starscream.swift in Sources */,

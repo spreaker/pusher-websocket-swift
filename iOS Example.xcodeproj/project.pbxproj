@@ -11,7 +11,8 @@
 		33831CC31A9CFCDB00B124F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33831CBF1A9CFCDB00B124F1 /* Images.xcassets */; };
 		33831CC41A9CFCDB00B124F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33831CC01A9CFCDB00B124F1 /* Main.storyboard */; };
 		33831CC51A9CFCDB00B124F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33831CC11A9CFCDB00B124F1 /* ViewController.swift */; };
-		339CCE801D10226600E921A5 /* PusherSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E0ADA11B4BF5110060B7F5 /* PusherSwift.framework */; };
+		FD5E5F4C1D1C0A84000BE42D /* PusherSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33E0ADA11B4BF5110060B7F5 /* PusherSwift.framework */; };
+		FD5E5F4D1D1C0A84000BE42D /* PusherSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 33E0ADA11B4BF5110060B7F5 /* PusherSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,28 @@
 			remoteGlobalIDString = 33831C941A9CF61600B124F1;
 			remoteInfo = PusherSwiftTests;
 		};
+		FD5E5F4E1D1C0A84000BE42D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33831CC61A9CFDD000B124F1 /* PusherSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 33831C881A9CF61600B124F1;
+			remoteInfo = "PusherSwift-iOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD5E5F501D1C0A84000BE42D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FD5E5F4D1D1C0A84000BE42D /* PusherSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		21AFCABFD6461F6288FAA7A5 /* Pods_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339CCE801D10226600E921A5 /* PusherSwift.framework in Frameworks */,
+				FD5E5F4C1D1C0A84000BE42D /* PusherSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +161,6 @@
 		4102BF433CEEFDB30CDD25C0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				63B4963D1F9188B612AE6FB6 /* Pods-iOS Example.debug.xcconfig */,
 				2EB04428B64860E705E7675C /* Pods-iOS Example.release.xcconfig */,
 			);
 			name = Pods;
@@ -163,10 +184,12 @@
 				33831C5A1A9CEEE900B124F1 /* Sources */,
 				33831C5B1A9CEEE900B124F1 /* Frameworks */,
 				33831C5C1A9CEEE900B124F1 /* Resources */,
+				FD5E5F501D1C0A84000BE42D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FD5E5F4F1D1C0A84000BE42D /* PBXTargetDependency */,
 			);
 			name = "iOS Example";
 			productName = "iOS Example";
@@ -185,7 +208,7 @@
 				TargetAttributes = {
 					33831C5D1A9CEEE900B124F1 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 2YKMTT96X8;
+						DevelopmentTeam = H7FL434D9W;
 					};
 				};
 			};
@@ -282,6 +305,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FD5E5F4F1D1C0A84000BE42D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "PusherSwift-iOS";
+			targetProxy = FD5E5F4E1D1C0A84000BE42D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		33831C7B1A9CEEEA00B124F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -372,12 +403,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pusher.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusher.fake.globus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -391,13 +422,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pusher.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pusher.fake.globus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

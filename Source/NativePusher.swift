@@ -146,13 +146,16 @@ public class NativePusher {
         try! request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: [])
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        print("THE REQUEST: ", request.description)
+        print("params: ", params.description)
+        
         let task = URLSession.dataTaskWithRequest(
             request,
             completionHandler: { data, response, error in
                 guard let httpResponse = response as? NSHTTPURLResponse
                     where (200 <= httpResponse.statusCode && httpResponse.statusCode < 300)
                 else {
-                    print("Bad response from server when trying to modify subscription to interest " + interest)
+                    print("Bad response from server when trying to modify subscription to interest " + interest + ". Full response: " + response!.description)
                     return
                 }
                 callback()
